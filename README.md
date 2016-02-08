@@ -1,2 +1,2 @@
 # e-school
-Application for schools
+My Sample Application
