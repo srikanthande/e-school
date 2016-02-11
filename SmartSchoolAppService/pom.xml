@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.smartSchool</groupId>
-  <artifactId>SmartSchoolApp</artifactId>
+  <groupId>com.smartSchool.Service</groupId>
+  <artifactId>SmartSchoolAppService</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>SmartSchoolApp Maven Webapp</name>
+  <name>SmartSchoolAppService Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -19,9 +19,13 @@
 		<artifactId>javax.servlet-api</artifactId>
 		<version>3.1.0</version>
 	</dependency>
-	
+	<dependency>
+		<groupId>com.sun.jersey</groupId>
+		<artifactId>jersey-server</artifactId>
+		<version>1.8</version>
+	</dependency>
   </dependencies>
   <build>
-    <finalName>SmartSchoolApp</finalName>
+    <finalName>SmartSchoolAppService</finalName>
   </build>
 </project>
