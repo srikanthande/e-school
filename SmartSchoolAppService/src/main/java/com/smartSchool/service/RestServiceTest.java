@@ -13,6 +13,11 @@ import com.smartSchool.pojo.Track;
 @Path("/hello")
 public class RestServiceTest {
 
+	/**
+	 * Below method is a GET request for fetching the data just by passing the input string in URL.
+	 * @param msg
+	 * @return
+	 */
 	@GET
 	@Path("/{param}")
 	public Response getMsg(@PathParam("param") String msg) {
@@ -23,22 +28,11 @@ public class RestServiceTest {
  
 	}
 	
-	  
-	
-	/*  @POST
-	  //@Path("/post")
-	  @Produces(MediaType.APPLICATION_JSON)
-	  @Consumes(MediaType.APPLICATION_JSON)
-	  public JSONObject sayPlainTextHello( JSONObject inputJsonObj) throws Exception {
-
-	    String input = (String) inputJsonObj.get("input");
-	    String output = "The input you sent is :" + input;
-	    JSONObject outputJsonObj = new JSONObject();
-	    outputJsonObj.put("output", output);
-
-	    return outputJsonObj;
-	  } */
-	  
+	/**
+	 * Below method is a POST request for fetching the response by passing a String object.
+	 * @param track
+	 * @return
+	 */
 	  	@POST
 		@Path("/post1")
 		@Consumes(MediaType.APPLICATION_JSON)
@@ -48,13 +42,34 @@ public class RestServiceTest {
 			return Response.status(201).entity(result).build();
 			
 		}
+	  	
+	  	/**
+		 * Below method is a POST request for fetching the response by passing a custom object.
+		 * @param track
+		 * @return
+		 */
 		@POST
 		@Path("/post2")
 		@Consumes(MediaType.APPLICATION_JSON)
 		public Response createTrackInJSON(Track track) {
-		  System.out.println("entered json");
+		  System.out.println("entered object-response");
 			String result = "Track saved : " + track;
 			return Response.status(201).entity(result).build();
+			
+		}
+		
+		/**
+		 * Below method is a POST request for fetching a custom object by passing a custom object.
+		 * @param track
+		 * @return
+		 */
+		@POST
+		@Path("/post3")
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Track createTrackInObject(Track track) {
+		  System.out.println("entered object-custom");
+			track.setSinger("output");
+			return track;
 			
 		}
 }

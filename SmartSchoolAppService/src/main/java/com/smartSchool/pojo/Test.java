@@ -13,7 +13,7 @@ public class Test {
 	public static void main(String args[]) throws Exception{
 		
 		
-		String baseServiceURI = "http://localhost:8080/SmartSchoolAppService/restAPI/hello/post2";
+		String baseServiceURI = "http://localhost:8080/SmartSchoolAppService/restAPI/hello/post3";
 		Track tt = new Track();
 		tt.setSinger("Srikanth");
 		tt.setTitle("ttitle");
@@ -24,8 +24,9 @@ public class Test {
 		  WebResource service = client.resource(baseServiceURI);
 		  ClientResponse response = service.type(MediaType.APPLICATION_JSON).post(ClientResponse.class, obj);
 			System.out.println("Output from Server .... \n");
-			String output = response.getEntity(String.class);
-			System.out.println(output);
+			Track ttt=response.getEntity(Track.class);
+			
+			System.out.println(ttt.getSinger());
 		
 		
 			
